@@ -1,0 +1,37 @@
+{
+  "name": "ts-expression",
+  "version": "1.0.1",
+  "license": "GPL-3.0",
+  "author": "Roman Hnatiuk <hnatiukr@pm.me>",
+  "repository": "https://github.com/hnatiukr/ts-expression",
+  "description": "Constructor of TypeScript symbolic expressions.",
+  "homepage": "https://github.com/hnatiukr/ts-expression#readme",
+  "keywords": [
+    "lisp",
+    "sexp",
+    "sexpr",
+    "typescript",
+    "s-expression",
+    "data-structure",
+    "symbolic-expression",
+    "functional-programming"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "types": "types.d.ts",
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "documentation": "14.0.3",
+    "prettier": "3.3.3",
+    "tsc-alias": "1.8.10"
+  },
+  "peerDependencies": {
+    "typescript": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  }
+}

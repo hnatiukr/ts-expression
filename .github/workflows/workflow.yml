@@ -1,0 +1,30 @@
+name: Bun CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main', 'develop']
+
+jobs:
+  test:
+    name: make test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+
+      - run: make
+      - run: make test
+
+  build:
+    name: make build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+
+      - run: make
+      - run: make build
