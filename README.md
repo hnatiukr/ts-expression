@@ -6,13 +6,13 @@ Constructor of TypeScript <a href="https://en.wikipedia.org/wiki/S-expression">s
 
 <p align="center">
   <a href="https://github.com/hnatiukr/ts-expression/actions/workflows/workflow.yml">
-  <img src="https://img.shields.io/github/actions/workflow/status/hnatiukr/ts-expression/workflow.yml?color=green&style=for-the-badge" alt="npm version">
+  <img src="https://img.shields.io/github/actions/workflow/status/hnatiukr/ts-expression/workflow.yml?color=blue&style=for-the-badge" alt="npm version">
   </a>
   <a href="https://www.npmjs.com/package/ts-expression">
-    <img src="https://img.shields.io/github/v/release/hnatiukr/ts-expression?color=green&style=for-the-badge" alt="npm version">
+    <img src="https://img.shields.io/github/v/release/hnatiukr/ts-expression?color=blue&style=for-the-badge" alt="npm version">
   </a>
   <a href="https://github.com/hnatiukr/ts-expression">
-    <img src="https://img.shields.io/github/license/hnatiukr/ts-expression?color=green&style=for-the-badge" alt="MIT License">
+    <img src="https://img.shields.io/github/license/hnatiukr/ts-expression?color=blue&style=for-the-badge" alt="MIT License">
   </a>
 </p>
 
