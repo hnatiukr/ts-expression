@@ -193,7 +193,7 @@ const str = toString(sexp); // "((1, 2), ("hello", "world"))"
 
 Returns **[string][10]** A string representation of the `cons` s-expression, including nested s-expressions, in the format `(head, tail)`.
 
-## isCons
+### isCons
 
 Checks if the provided argument is a `cons` symbolic expression.
 
