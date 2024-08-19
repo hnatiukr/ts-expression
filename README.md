@@ -1,7 +1,7 @@
 <h1 align="center">TS-Expression</h1>
 
 <p align="center">
-Constructor of TypeScript <a href="https://en.wikipedia.org/wiki/S-expression">symbolic expressions</a>.
+Constructor of TypeScript symbolic expressions.
 </p>
 
 <p align="center">
@@ -51,7 +51,7 @@ calculateDistance(makePoint(-2, -3), makePoint(-4, 4)); // ≈ 7.28
 
 ## About
 
-TS-Expression is a lightweight TypeScript library inspired by LISP's [`cons/car/cdr`](https://en.wikipedia.org/wiki/CAR_and_CDR) operations for S-expressions. It brings functional programming concepts to TypeScript, enabling immutable data structures and encouraging robust, predictable code. This minimalist approach to handling complex data structures is particularly useful for algorithmic tasks and data manipulation, allowing developers to leverage powerful functional programming techniques in a familiar JavaScript/TypeScript environment.
+**TS-Expression** stands for [TypeScript (TS)](https://www.typescriptlang.org/) + [symbolic expression (s-expression)](https://en.wikipedia.org/wiki/S-expression). It is a lightweight TypeScript library inspired by LISP's [`cons/car/cdr`](https://en.wikipedia.org/wiki/CAR_and_CDR) operations for S-expressions. It brings functional programming concepts to TypeScript, enabling immutable data structures and encouraging robust, predictable code. This minimalist approach to handling complex data structures is particularly useful for algorithmic tasks and data manipulation, allowing developers to leverage powerful functional programming techniques in a familiar JavaScript/TypeScript environment.
 
 <p align="center">
   <img with="700" height="400" src="./assets/ts-expression.png" alt="TS-Expression" />
