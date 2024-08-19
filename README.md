@@ -17,20 +17,27 @@ Constructor of TypeScript symbolic expressions.
 </p>
 
 ```ts
-import { cons, car, cdr } from 'ts-expression';
+import car from 'ts-expression/car'
+import cdr from 'ts-expression/cdr'
+import cons from 'ts-expression/cons'
+import type { Cons } from 'ts-expression/types'
 
-const makePoint = (a, b) => cons(a, b);
-const getX = (point) => car(point);
-const getY = (point) => cdr(point);
+type X = number;
+type Y = number;
+type Point = Cons<X, Y>;
 
-const getSymmetricalPoint = (point) => {
+const makePoint = (a: number, b: number) => cons(a, b);
+const getX = (point: Point) => car(point);
+const getY = (point: Point) => cdr(point);
+
+const getSymmetricalPoint = (point: Point) => {
   const x = getX(point);
   const y = getY(point);
 
   return makePoint(-x, -y);
 };
 
-const calculateDistance = (point1, point2) => {
+const calculateDistance = (point1: Point, point2: Point) => {
   const [x1, y1] = [getX(point1), getY(point1)];
   const [x2, y2] = [getX(point2), getY(point2)];
 
@@ -44,7 +51,6 @@ const point2 = makePoint(0, 0);
 
 getX(point1); // 3
 getY(point2); // 0
-distance(point1, point2); // 5
 getSymmetricalPoint(makePoint(1, 5)); // makePoint(-1, -5)
 calculateDistance(makePoint(-2, -3), makePoint(-4, 4)); // ≈ 7.28
 ```
