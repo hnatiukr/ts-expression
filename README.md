@@ -5,6 +5,12 @@ Constructor of TypeScript symbolic expressions.
 </p>
 
 <p align="center">
+  <sub>
+      <1kB | no deps | tree-shakeable | side-effect free
+  </sub>
+</p>
+
+<p align="center">
   <a href="https://github.com/hnatiukr/ts-expression/actions/workflows/workflow.yml">
   <img src="https://img.shields.io/github/actions/workflow/status/hnatiukr/ts-expression/workflow.yml?color=blue&style=for-the-badge" alt="npm version">
   </a>
