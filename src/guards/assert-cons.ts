@@ -1,3 +1,7 @@
+/**
+ * @module Cons
+ */
+
 import isCons from './is-cons';
 
 /**

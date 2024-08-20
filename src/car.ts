@@ -1,7 +1,14 @@
-import type { Cons } from './types';
-import assertCons from './assert-cons';
+/**
+ * @module Car
+ */
 
-export const CAR = 'car';
+import type { Cons } from './cons';
+import assertCons from './guards/assert-cons';
+
+/**
+ * Internal unique message for `car`.
+ */
+export const carmsg = Symbol.for('@@car');
 
 /**
  * Retrieves the first element of a `cons` s-expression (known as `car`).
@@ -28,7 +35,7 @@ export const CAR = 'car';
 const car = <CAR, CDR>(cons: Cons<CAR, CDR>): CAR => {
   assertCons(cons);
 
-  return cons(CAR);
+  return cons(carmsg);
 };
 
 export default car;
