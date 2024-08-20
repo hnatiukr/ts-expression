@@ -1,4 +1,8 @@
 /**
+ * @module Cons
+ */
+
+/**
  * Checks if the provided argument is a `cons` symbolic expression.
  *
  * This function determines if the given value is a `cons` s-expression by checking if it is a function and has

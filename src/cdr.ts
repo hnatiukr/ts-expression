@@ -1,7 +1,14 @@
-import type { Cons } from './types';
-import assertCons from './assert-cons';
+/**
+ * @module Cdr
+ */
 
-export const CDR = 'cdr';
+import type { Cons } from './cons';
+import assertCons from './guards/assert-cons';
+
+/**
+ * Internal unique message for `cdr`.
+ */
+export const cdrmsg = Symbol.for('@@cdr');
 
 /**
  * Retrieves the second element of a `cons` cons (known as `cdr`).
@@ -28,7 +35,7 @@ export const CDR = 'cdr';
 const cdr = <CAR, CDR>(cons: Cons<CAR, CDR>): CDR => {
   assertCons(cons);
 
-  return cons(CDR);
+  return cons(cdrmsg);
 };
 
 export default cdr;

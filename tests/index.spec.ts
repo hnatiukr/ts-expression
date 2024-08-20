@@ -1,6 +1,8 @@
 import { expect, test, describe } from 'bun:test';
 
-import { cons, car, cdr, toString, assertCons } from '../src';
+import { cons, car, cdr } from '../src';
+import { assertCons } from '../src/guards';
+import { toString } from '../src/operators';
 
 describe('cons function', () => {
   test('should create a symbolic expression and access its elements', () => {

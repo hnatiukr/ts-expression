@@ -17,10 +17,8 @@ Constructor of TypeScript symbolic expressions.
 </p>
 
 ```ts
-import car from 'ts-expression/car'
-import cdr from 'ts-expression/cdr'
-import cons from 'ts-expression/cons'
-import type { Cons } from 'ts-expression/types'
+import { car, cdr, cons } from 'ts-expression';
+import type { Cons } from 'ts-expression/cons';
 
 type X = number;
 type Y = number;
@@ -276,11 +274,10 @@ Returns **void**
 
 Rational numbers as pairs of values: numerator and denominator.
 
-```typescript
-import car from 'ts-expression/car'
-import cdr from 'ts-expression/cdr'
-import cons from 'ts-expression/cons'
-import type { Cons } from 'ts-expression/types'
+```ts
+import type { Cons } from 'ts-expression/cons';
+import { car, cdr, cons } from 'ts-expression';
+import { toString } from 'ts-expression/operators';
 
 type Numerator = number;
 type Denominator = number;
@@ -292,9 +289,8 @@ const numer = (rat: Fraction): Numerator => car(rat);
 
 const denom = (rat: Fraction): Denominator => cdr(rat);
 
-const toString = (rat: Fraction): string => `${numer(rat)} / ${denom(rat)}`;
-
-const isEqual = (rat1: Fraction, rat2: Fraction): boolean => numer(rat1) * denom(rat2) === denom(rat1) * numer(rat2);
+const isEqual = (rat1: Fraction, rat2: Fraction): boolean =>
+  numer(rat1) * denom(rat2) === denom(rat1) * numer(rat2);
 
 const add = (rat1: Fraction, rat2: Fraction): Fraction => {
   const [a, b] = [numer(rat1), denom(rat1)];
@@ -330,7 +326,7 @@ const rat1 = make(2, 3);
 const rat2 = make(4, 6);
 const rat3 = make(7, 2);
 
-toString(rat2); // '4 / 6'
+toString(rat2); // '(4, 6)'
 isEqual(rat1, rat2); // true
 
 add(rat1, rat3); // 25/6
