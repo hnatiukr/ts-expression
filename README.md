@@ -277,38 +277,47 @@ Returns **void**
 Rational numbers as pairs of values: numerator and denominator.
 
 ```typescript
-const make = (numer, denom) => cons(numer, denom);
+import car from 'ts-expression/car'
+import cdr from 'ts-expression/cdr'
+import cons from 'ts-expression/cons'
+import type { Cons } from 'ts-expression/types'
 
-const numer = (rat) => car(rat);
+type Numerator = number;
+type Denominator = number;
+type Fraction = Cons<Numerator, Denominator>;
 
-const denom = (rat) => cdr(rat);
+const make = (numer: Numerator, denom: Denominator) => cons(numer, denom);
 
-const toString = (rat) => `${numer(rat)} / ${denom(rat)}`;
+const numer = (rat: Fraction): Numerator => car(rat);
 
-const isEqual = (rat1, rat2) => numer(rat1) * denom(rat2) === denom(rat1) * numer(rat2);
+const denom = (rat: Fraction): Denominator => cdr(rat);
 
-const add = (rat1, rat2) => {
+const toString = (rat: Fraction): string => `${numer(rat)} / ${denom(rat)}`;
+
+const isEqual = (rat1: Fraction, rat2: Fraction): boolean => numer(rat1) * denom(rat2) === denom(rat1) * numer(rat2);
+
+const add = (rat1: Fraction, rat2: Fraction): Fraction => {
   const [a, b] = [numer(rat1), denom(rat1)];
   const [c, d] = [numer(rat2), denom(rat2)];
 
   return make(a * d + b * c, b * d); // (a * d + b * c) / (b * d)
 };
 
-const sub = (rat1, rat2) => {
+const sub = (rat1: Fraction, rat2: Fraction): Fraction => {
   const [a, b] = [numer(rat1), denom(rat1)];
   const [c, d] = [numer(rat2), denom(rat2)];
 
   return make(a * d - b * c, b * d); // (a * d - b * c) / (b * d)
 };
 
-const mul = (rat1, rat2) => {
+const mul = (rat1: Fraction, rat2: Fraction): Fraction => {
   const [a, b] = [numer(rat1), denom(rat1)];
   const [c, d] = [numer(rat2), denom(rat2)];
 
   return make(a * c, b * d); // (a * c) / (b * d)
 };
 
-const div = (rat1, rat2) => {
+const div = (rat1: Fraction, rat2: Fraction): Fraction => {
   const [a, b] = [numer(rat1), denom(rat1)];
   const [c, d] = [numer(rat2), denom(rat2)];
 
