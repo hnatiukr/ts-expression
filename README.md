@@ -30,7 +30,8 @@ type X = number;
 type Y = number;
 type Point = Cons<X, Y>;
 
-const makePoint = (a: number, b: number) => cons(a, b);
+const makePoint = (x: X, y: Y): Point => cons(x, y);
+
 const getX = (point: Point) => car(point);
 const getY = (point: Point) => cdr(point);
 
