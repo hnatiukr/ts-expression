@@ -1,5 +1,11 @@
 # ts-expression
 
+## 1.2.1
+
+### Patch Changes
+
+- 366cbb8: Update readme file.
+
 ## 1.2.0
 
 ### Minor Changes
