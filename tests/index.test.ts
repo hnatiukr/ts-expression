@@ -1,8 +1,10 @@
-import { expect, test, describe } from 'bun:test';
+import { test, expect, describe } from 'vitest';
 
-import { cons, car, cdr } from '../src';
-import { assertCons } from '../src/guards';
-import { toString } from '../src/operators';
+import car from '../src/car.js';
+import cdr from '../src/cdr.js';
+import cons from '../src/cons.js';
+import toString from '../src/operators/to-string.js';
+import assertCons from '../src/guards/assert-cons.js';
 
 describe('cons function', () => {
   test('should create a symbolic expression and access its elements', () => {

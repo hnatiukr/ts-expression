@@ -2,8 +2,8 @@
  * @module Cons
  */
 
-import { carmsg } from './car';
-import { cdrmsg } from './cdr';
+import { carmsg } from './car.js';
+import { cdrmsg } from './cdr.js';
 
 /**
  * Constructs a `cons` sexp from two values, `car` and `cdr`.

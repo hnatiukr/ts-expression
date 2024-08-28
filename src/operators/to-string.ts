@@ -2,11 +2,11 @@
  * @module Cons
  */
 
-import car from '../car';
-import cdr from '../cdr';
-import type { Cons } from '../cons';
-import isCons from '../guards/is-cons';
-import assertCons from '../guards/assert-cons';
+import car from '../car.js';
+import cdr from '../cdr.js';
+import type { Cons } from '../cons.js';
+import isCons from '../guards/is-cons.js';
+import assertCons from '../guards/assert-cons.js';
 
 const stringify = <CAR, CDR>(maybeCons: CAR | CDR): string => {
   return isCons(maybeCons) ? toString(maybeCons as Cons<any, any>) : JSON.stringify(maybeCons);

@@ -2,8 +2,8 @@
  * @module Car
  */
 
-import type { Cons } from './cons';
-import assertCons from './guards/assert-cons';
+import type { Cons } from './cons.js';
+import assertCons from './guards/assert-cons.js';
 
 /**
  * Internal unique message for `car`.

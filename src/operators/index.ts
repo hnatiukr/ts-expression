@@ -1,1 +1,1 @@
-export { default as toString } from './to-string';
+export { default as toString } from './to-string.js';
