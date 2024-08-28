@@ -2,7 +2,7 @@
  * @module Cons
  */
 
-import isCons from './is-cons';
+import isCons from './is-cons.js';
 
 /**
  * Asserts that the provided argument is a valid `cons` s-expression and throws a `ReferenceError` if it is not.

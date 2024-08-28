@@ -3,8 +3,6 @@
 #
 
 OUT_DIR = lib
-BASE_DIR = src
-TEST_DIR = tests
 
 #
 # targets
@@ -12,18 +10,27 @@ TEST_DIR = tests
 
 install:
 	@echo "\n> Installing dependecies..."
-	@bun install --loglevel=error
+	@npm ci --loglevel=error
 	@echo "[ok] Installation completed.\n"
+
+dev:
+	@echo "\n> Running tests in watch mode..."
+	@npx vitest
+.PHONY: dev
 
 build:
 	@echo "\n> Compilation..."
-	@rm -rf $(OUT_DIR)
-	@make formatting type-check
-	@npx tsc --build tsconfig.build.json
-	@npx tsc-alias -p tsconfig.build.json
-	@make copy-npm copy-dts
+	@npx tsc
 	@echo "\n[ok] Compilation completed.\n"
 .PHONY: build
+
+ci:
+	@echo "\n> CI..."
+	@rm -rf $(OUT_DIR)
+	@make format-checking test build exports-checking
+	@make copy-npm
+	@echo "\n[ok] CI completed.\n"
+.PHONY: ci
 
 copy-npm:
 	@cp package.json $(OUT_DIR)
@@ -31,16 +38,17 @@ copy-npm:
 	@cp LICENSE $(OUT_DIR)
 .PHONY: copy-npm
 
-copy-dts:
-	@find ./$(BASE_DIR) -name '*.d.ts' -exec cp -prv '{}' 'lib' ';'
-.PHONY: copy-dts
+changeset:
+	@npx changeset add
+.PHONY: local-release
 
-publishing:
-	@echo "\n> Publishing..."
-	@make build
-	@cd ./$(OUT_DIR) && npm publish --no-interaction
-	@echo "[ok] Publishing completed.\n"
-.PHONY: publishing
+local-release:
+	@echo "\n Releasing..."
+	@make ci
+	@npx changeset version
+	@npx changeset publish
+	@echo "[ok] The package has been released."
+.PHONY: local-release
 
 formatting:
 	@echo "\n> Formatting..."
@@ -48,14 +56,20 @@ formatting:
 	@echo "[ok] Formatting completed.\n"
 .PHONY: formatting
 
-type-check:
-	@npx tsc -p tsconfig.typecheck.json
-.PHONY: type-check
+format-checking:
+	@npx prettier --check .
+	@echo "[ok] Checking formatting completed.\n"
+.PHONY: format-checking
+
+exports-checking:
+	@echo "\n> Exports checking..."
+	@npx attw . --pack --no-emoji --ignore-rules cjs-resolves-to-esm
+	@echo "\n[ok] Checking exports completed.\n"
+.PHONY: exports-checking
 
 test:
 	@echo "> Testing...\n"
-	@make type-check
-	@bun test
+	@npx vitest run
 	@echo "\n[ok] Testing completed.\n"
 .PHONY: test
 

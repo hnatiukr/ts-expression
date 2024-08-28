@@ -1,35 +1,29 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["ESNext", "DOM"],
-
-    "moduleDetection": "force",
-    "moduleResolution": "bundler",
-
-    "declaration": false,
-    "stripInternal": true,
-    "declarationDir": null,
-    "esModuleInterop": true,
-    "emitDeclarationOnly": null,
-
-    "strict": true,
-    "alwaysStrict": true,
+    /* Base Options: */
+    "target": "es2022",
+    "allowJs": true,
     "skipLibCheck": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": true,
-    "noImplicitReturns": true,
-    "noErrorTruncation": true,
-    "noUnusedParameters": false,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "allowUnreachableCode": false,
-    "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
-    "noPropertyAccessFromIndexSignature": false
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+
+    /* Strictness */
+    "strict": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* Transpilation */
+    "lib": ["es2022"],
+    "module": "NodeNext",
+    "outDir": "lib",
+    "rootDir": "src",
+    "sourceMap": true,
+    "declaration": true
   },
 
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["tests"]
 }
