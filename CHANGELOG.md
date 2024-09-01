@@ -1,5 +1,11 @@
 # ts-expression
 
+## 1.2.2
+
+### Patch Changes
+
+- e21285f: Fix CI
+
 ## 1.2.1
 
 ### Patch Changes
