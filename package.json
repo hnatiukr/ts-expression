@@ -24,6 +24,7 @@
   "files": [
     "lib"
   ],
+  "sideEffects": false,
   "devDependencies": {
     "@arethetypeswrong/cli": "0.15.4",
     "@changesets/cli": "2.27.7",
